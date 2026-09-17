@@ -145,20 +145,20 @@
             scroll-margin-top: 104px;
         }
 
-        /* Breaking News Red Landscape Moving Line Ticker */
+        /* Breaking News Red Landscape Moving Line Ticker (Left to Right, Smooth & Relaxed) */
         @keyframes ticker-landscape {
             0% {
-                transform: translate3d(0, 0, 0);
+                transform: translate3d(-50%, 0, 0);
             }
             100% {
-                transform: translate3d(-50%, 0, 0);
+                transform: translate3d(0, 0, 0);
             }
         }
 
         .breaking-news-track {
             display: inline-flex;
             width: max-content;
-            animation: ticker-landscape 55s linear infinite;
+            animation: ticker-landscape 120s linear infinite;
         }
 
         .breaking-news-track:hover,
