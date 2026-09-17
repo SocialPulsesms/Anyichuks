@@ -4,9 +4,92 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Cache;
+use App\Models\Mention;
+
+if (!function_exists('fetchBreakingNewsHeadlines')) {
+    function fetchBreakingNewsHeadlines() {
+        return Cache::remember('breaking_news_feed', 60, function () {
+            try {
+                $items = Mention::where(function ($q) {
+                        $q->where('entity_confirmed', true)
+                          ->orWhereIn('importance', ['breaking', 'high']);
+                    })
+                    ->orderByRaw("CASE WHEN importance = 'breaking' THEN 1 WHEN importance = 'high' THEN 2 WHEN importance = 'medium' THEN 3 ELSE 4 END")
+                    ->orderBy('published_at', 'desc')
+                    ->take(15)
+                    ->get(['id', 'title', 'url', 'importance', 'sentiment', 'published_at']);
+
+                if ($items->isEmpty()) {
+                    $items = Mention::orderBy('published_at', 'desc')->take(10)->get(['id', 'title', 'url', 'importance', 'sentiment', 'published_at']);
+                }
+
+                if ($items->isNotEmpty()) {
+                    return $items->map(function ($item) {
+                        return [
+                            'id' => $item->id,
+                            'title' => $item->title,
+                            'url' => $item->url,
+                            'importance' => $item->importance,
+                            'sentiment' => $item->sentiment,
+                            'published_at' => (string)$item->published_at,
+                        ];
+                    })->all();
+                }
+            } catch (\Throwable $e) {
+                // Graceful fallback to avoid interrupting page loads if DB is not reachable
+            }
+
+            return [
+                [
+                    'id' => 1,
+                    'title' => 'Ebonyi 2027: Dr. Ifeanyi Chukwuma Odii ANYI GA EMEYA Movement Gains Nationwide Momentum',
+                    'url' => '/campaign-2027',
+                    'importance' => 'breaking',
+                    'sentiment' => 'positive',
+                    'published_at' => now()->toIso8601String()
+                ],
+                [
+                    'id' => 2,
+                    'title' => 'Supreme Court Affirms Amb. Ifeanyi Chukwuma Odii as Ebonyi PDP Gubernatorial Flagbearer',
+                    'url' => '/campaign-2027',
+                    'importance' => 'high',
+                    'sentiment' => 'positive',
+                    'published_at' => now()->toIso8601String()
+                ],
+                [
+                    'id' => 3,
+                    'title' => 'Dr. Ifeanyi Odii Launches Strategic 2027 Economic & Industrial Transformation Blueprint for Ebonyi State',
+                    'url' => '/campaign-2027',
+                    'importance' => 'high',
+                    'sentiment' => 'positive',
+                    'published_at' => now()->toIso8601String()
+                ],
+                [
+                    'id' => 4,
+                    'title' => 'Ebele & Anyichuks Foundation Expands Grassroots Welfare, Housing & University Scholarship Scheme',
+                    'url' => '/#section-philanthropist',
+                    'importance' => 'breaking',
+                    'sentiment' => 'positive',
+                    'published_at' => now()->toIso8601String()
+                ]
+            ];
+        });
+    }
+}
 
 Route::get('/', function () {
-    return view('welcome');
+    $breakingNews = fetchBreakingNewsHeadlines();
+    return view('welcome', compact('breakingNews'));
+});
+
+Route::get('/api/breaking-news', function () {
+    $breakingNews = fetchBreakingNewsHeadlines();
+    return response()->json([
+        'status' => 'success',
+        'count' => count($breakingNews),
+        'items' => $breakingNews
+    ]);
 });
 
 Route::get('/contact', function () {
@@ -495,7 +578,8 @@ Route::get('/api/campaign/volunteer-stats', function () {
 
 // Dedicated Campaign Hub 2027
 Route::get('/campaign-2027', function () {
-    return view('campaign-2027');
+    $breakingNews = fetchBreakingNewsHeadlines();
+    return view('campaign-2027', compact('breakingNews'));
 });
 
 

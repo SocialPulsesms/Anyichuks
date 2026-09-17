@@ -131,18 +131,39 @@
         html {
             scroll-snap-type: y mandatory;
             scroll-behavior: smooth;
-            scroll-padding-top: 76px;
+            scroll-padding-top: 104px;
         }
 
         .accordion-section {
-            scroll-margin-top: 76px;
+            scroll-margin-top: 104px;
         }
 
         summary,
         .dropdown-content-panel {
             scroll-snap-align: start;
             scroll-snap-stop: always;
-            scroll-margin-top: 76px;
+            scroll-margin-top: 104px;
+        }
+
+        /* Breaking News Red Landscape Moving Line Ticker */
+        @keyframes ticker-landscape {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+
+        .breaking-news-track {
+            display: inline-flex;
+            width: max-content;
+            animation: ticker-landscape 55s linear infinite;
+        }
+
+        .breaking-news-track:hover,
+        .breaking-news-track:active {
+            animation-play-state: paused;
         }
 
         .word-span {
@@ -180,7 +201,7 @@
             html {
                 scroll-snap-type: none !important;
                 scroll-behavior: smooth !important;
-                scroll-padding-top: 72px !important;
+                scroll-padding-top: 96px !important;
                 -webkit-overflow-scrolling: touch;
             }
 
@@ -347,95 +368,152 @@
     <!-- Dark overlay handled by individual sections -->
     <!-- <div class="absolute inset-0 bg-black/60 z-0"></div> -->
 
-    <!-- Premium WordPress-style Header Navigation -->
-    <header
-        class="fixed top-0 left-0 z-50 w-full bg-black/80 backdrop-blur-xl border-b border-white/10 px-3.5 sm:px-6 lg:px-12 py-2.5 sm:py-4 transition-all">
-        <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
+    <!-- Premium WordPress-style Header Navigation with Breaking News Live Landscape Line -->
+    <header class="fixed top-0 left-0 z-50 w-full transition-all">
+        <!-- Main Top Bar Header Navigation -->
+        <div class="w-full bg-black/85 backdrop-blur-xl border-b border-white/10 px-3.5 sm:px-6 lg:px-12 py-2 sm:py-3.5">
+            <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
 
-            <!-- Logo -->
-            <a href="#section-home" class="text-sm sm:text-lg md:text-xl font-bold tracking-wide sm:tracking-wider text-white uppercase shrink-0 select-none">
-                ANYI GA EMEYA <span class="text-amber-400">2027</span>
-            </a>
-
-            <!-- Navigation Links (WordPress Desktop Menu Structure) -->
-            <nav class="desktop-nav-menu hidden md:flex items-center gap-6">
-                <a href="#section-home" class="hover:text-amber-400 transition-colors py-2 text-sm font-medium">Home</a>
-
-                <a href="#section-philanthropist"
-                    class="hover:text-amber-400 transition-colors py-2 text-sm font-medium">A philanthropist</a>
-                <a href="#section-news" class="hover:text-amber-400 transition-colors py-2 text-sm font-medium">NEWS</a>
-
-                <a href="/campaign-2027"
-                    class="hover:text-amber-400 text-amber-400 font-semibold transition-colors py-2 text-sm flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-                    2027 Campaign
+                <!-- Logo -->
+                <a href="#section-home" class="text-sm sm:text-lg md:text-xl font-bold tracking-wide sm:tracking-wider text-white uppercase shrink-0 select-none">
+                    ANYI GA EMEYA <span class="text-amber-400">2027</span>
                 </a>
-                <a href="javascript:void(0);" onclick="window.openAboutModal(event);"
-                    class="hover:text-amber-400 transition-colors py-2 text-sm font-medium">About</a>
-                <a href="/contact" class="hover:text-amber-400 transition-colors py-2 text-sm font-medium">Contact</a>
-            </nav>
 
-            <!-- Action Area: Button, Social Icons & Mobile Menu Toggle -->
-            <div class="flex items-center gap-2 sm:gap-3 lg:gap-5 shrink-0">
-                <!-- Join 2027 Movement Button (Always visible on mobile & desktop, elegantly fitted) -->
-                <button type="button" onclick="window.openVolunteerModal(event);"
-                    style="background-color: #f59e0b !important; color: #000000 !important; font-weight: 800 !important; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important;"
-                    class="relative z-10 px-2.5 sm:px-5 py-1.5 sm:py-2 text-black font-extrabold rounded-full hover:brightness-110 active:scale-95 transition-all text-[11px] sm:text-xs tracking-wider uppercase whitespace-nowrap flex items-center gap-1.5 cursor-pointer shrink-0">
-                    <span class="w-1.5 h-1.5 rounded-full bg-black shrink-0"></span>
-                    <span>Join <span class="hidden sm:inline">2027 Movement</span><span class="sm:hidden">2027</span></span>
-                </button>
+                <!-- Navigation Links (WordPress Desktop Menu Structure) -->
+                <nav class="desktop-nav-menu hidden md:flex items-center gap-6">
+                    <a href="#section-home" class="hover:text-amber-400 transition-colors py-2 text-sm font-medium">Home</a>
 
-                <!-- Social Icons (Visible on Desktop Only to Avoid Mobile Clutter) -->
-                <div class="hidden lg:flex items-center gap-3">
-                    <!-- X (Twitter) -->
-                    <a href="https://x.com/ifeanyiCodii" target="_blank" rel="noopener noreferrer"
-                        class="text-white hover:text-amber-400 transition-colors p-1" aria-label="X (formerly Twitter)">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
-                            </path>
-                        </svg>
+                    <a href="#section-philanthropist"
+                        class="hover:text-amber-400 transition-colors py-2 text-sm font-medium">A philanthropist</a>
+                    <a href="#section-news" class="hover:text-amber-400 transition-colors py-2 text-sm font-medium">NEWS</a>
+
+                    <a href="/campaign-2027"
+                        class="hover:text-amber-400 text-amber-400 font-semibold transition-colors py-2 text-sm flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                        2027 Campaign
                     </a>
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/ifeanyicodii/" target="_blank" rel="noopener noreferrer"
-                        class="text-white hover:text-amber-400 transition-colors p-1" aria-label="Instagram">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd"
-                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                    <a href="javascript:void(0);" onclick="window.openAboutModal(event);"
+                        class="hover:text-amber-400 transition-colors py-2 text-sm font-medium">About</a>
+                    <a href="/contact" class="hover:text-amber-400 transition-colors py-2 text-sm font-medium">Contact</a>
+                </nav>
+
+                <!-- Action Area: Button, Social Icons & Mobile Menu Toggle -->
+                <div class="flex items-center gap-2 sm:gap-3 lg:gap-5 shrink-0">
+                    <!-- Join 2027 Movement Button (Always visible on mobile & desktop, elegantly fitted) -->
+                    <button type="button" onclick="window.openVolunteerModal(event);"
+                        style="background-color: #f59e0b !important; color: #000000 !important; font-weight: 800 !important; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important;"
+                        class="relative z-10 px-2.5 sm:px-5 py-1.5 sm:py-2 text-black font-extrabold rounded-full hover:brightness-110 active:scale-95 transition-all text-[11px] sm:text-xs tracking-wider uppercase whitespace-nowrap flex items-center gap-1.5 cursor-pointer shrink-0">
+                        <span class="w-1.5 h-1.5 rounded-full bg-black shrink-0"></span>
+                        <span>Join <span class="hidden sm:inline">2027 Movement</span><span class="sm:hidden">2027</span></span>
+                    </button>
+
+                    <!-- Social Icons (Visible on Desktop Only to Avoid Mobile Clutter) -->
+                    <div class="hidden lg:flex items-center gap-3">
+                        <!-- X (Twitter) -->
+                        <a href="https://x.com/ifeanyiCodii" target="_blank" rel="noopener noreferrer"
+                            class="text-white hover:text-amber-400 transition-colors p-1" aria-label="X (formerly Twitter)">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                </path>
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/ifeanyicodii/" target="_blank" rel="noopener noreferrer"
+                            class="text-white hover:text-amber-400 transition-colors p-1" aria-label="Instagram">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
                                 clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="https://web.facebook.com/ifeanyiCodii/?_rdc=1&_rdr" target="_blank"
+                            rel="noopener noreferrer" class="text-white hover:text-amber-400 transition-colors p-1"
+                            aria-label="Facebook">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@ifeanyicodii" target="_blank" rel="noopener noreferrer" class="text-white hover:text-amber-400 transition-colors p-1" aria-label="TikTok">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-1.15 4.39-2.92 5.86-1.57 1.3-3.66 1.94-5.69 1.7-2.12-.23-4.06-1.3-5.32-2.93-1.39-1.78-1.92-4.14-1.42-6.32.48-2.17 1.87-4.07 3.8-5.11 2.01-1.07 4.43-1.22 6.6-.47v4.15c-1.16-.36-2.45-.41-3.63-.04-1.12.35-2.09 1.11-2.6 2.16-.54 1.12-.59 2.44-.15 3.59.45 1.2 1.48 2.15 2.72 2.49 1.28.36 2.69.19 3.84-.46 1.19-.69 1.99-1.91 2.18-3.26.23-1.48.16-2.98.17-4.47V.02z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Hamburger Button -->
+                    <button type="button" onclick="window.toggleMobileNav()" id="mobile-nav-toggle"
+                        class="md:hidden flex p-2 rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 text-white transition-all items-center justify-center cursor-pointer border border-white/15 shrink-0"
+                        aria-label="Toggle Mobile Navigation Menu">
+                        <svg id="hamburger-icon" class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
-                    </a>
-                    <!-- Facebook -->
-                    <a href="https://web.facebook.com/ifeanyiCodii/?_rdc=1&_rdr" target="_blank"
-                        rel="noopener noreferrer" class="text-white hover:text-amber-400 transition-colors p-1"
-                        aria-label="Facebook">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd"
-                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                                clip-rule="evenodd"></path>
+                        <svg id="close-icon" class="w-5 h-5 hidden text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
-                    </a>
-                    <!-- TikTok -->
-                    <a href="https://www.tiktok.com/@ifeanyicodii" target="_blank" rel="noopener noreferrer" class="text-white hover:text-amber-400 transition-colors p-1" aria-label="TikTok">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-1.15 4.39-2.92 5.86-1.57 1.3-3.66 1.94-5.69 1.7-2.12-.23-4.06-1.3-5.32-2.93-1.39-1.78-1.92-4.14-1.42-6.32.48-2.17 1.87-4.07 3.8-5.11 2.01-1.07 4.43-1.22 6.6-.47v4.15c-1.16-.36-2.45-.41-3.63-.04-1.12.35-2.09 1.11-2.6 2.16-.54 1.12-.59 2.44-.15 3.59.45 1.2 1.48 2.15 2.72 2.49 1.28.36 2.69.19 3.84-.46 1.19-.69 1.99-1.91 2.18-3.26.23-1.48.16-2.98.17-4.47V.02z">
-                            </path>
-                        </svg>
-                    </a>
+                    </button>
                 </div>
+            </div>
+        </div>
 
-                <!-- Mobile Menu Hamburger Button -->
-                <button type="button" onclick="window.toggleMobileNav()" id="mobile-nav-toggle"
-                    class="md:hidden flex p-2 rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 text-white transition-all items-center justify-center cursor-pointer border border-white/15 shrink-0"
-                    aria-label="Toggle Mobile Navigation Menu">
-                    <svg id="hamburger-icon" class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                    <svg id="close-icon" class="w-5 h-5 hidden text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
+        <!-- Breaking News Live Ticker Line (Moving in landscape line just under the top bar header, in vibrant red line) -->
+        <div id="breaking-news-line"
+            class="w-full bg-[#cc0000] border-b border-red-800 text-white shadow-md flex items-center h-8 sm:h-9 overflow-hidden relative select-none">
+            <!-- Static High-Visibility Badge Pill on Left -->
+            <div class="flex items-center gap-1.5 sm:gap-2 bg-[#990000] px-2.5 sm:px-4 py-1 h-full shrink-0 z-20 shadow-md border-r border-red-800">
+                <span class="relative flex h-2 w-2 shrink-0">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-90"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                <span class="font-black text-[10px] sm:text-xs uppercase tracking-wider text-white whitespace-nowrap flex items-center gap-1">
+                    <span>BREAKING NEWS</span>
+                </span>
+            </div>
+
+            <!-- Continuous Landscape Moving Marquee Track -->
+            <div class="relative w-full overflow-hidden flex items-center h-full ticker-viewport" id="breaking-news-viewport">
+                <div class="breaking-news-track flex items-center whitespace-nowrap will-change-transform" id="breaking-news-track">
+                    @if(!empty($breakingNews) && count($breakingNews) > 0)
+                        {{-- Render items duplicated for seamless infinite continuous scroll --}}
+                        @for($i = 0; $i < 2; $i++)
+                            @foreach($breakingNews as $item)
+                                @php
+                                    $itemUrl = data_get($item, 'url', 'javascript:void(0);');
+                                    $itemTitle = data_get($item, 'title', '');
+                                    $itemImportance = data_get($item, 'importance', '');
+                                @endphp
+                                <a href="{{ $itemUrl ?: 'javascript:void(0);' }}"
+                                   target="{{ !empty($itemUrl) && !str_starts_with($itemUrl, 'javascript') ? '_blank' : '_self' }}"
+                                   rel="noopener noreferrer"
+                                   class="inline-flex items-center text-white hover:text-amber-200 font-medium text-xs sm:text-sm px-4 sm:px-6 transition-colors group cursor-pointer">
+                                    <span class="text-amber-300 font-bold mr-2 text-xs">●</span>
+                                    <span class="group-hover:underline tracking-tight">{{ $itemTitle }}</span>
+                                    @if(!empty($itemImportance) && in_array(strtolower($itemImportance), ['breaking', 'high']))
+                                        <span class="ml-2 px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider {{ strtolower($itemImportance) === 'breaking' ? 'bg-black/40 text-amber-300 border border-amber-300/40' : 'bg-red-900/60 text-white/90' }}">
+                                            {{ $itemImportance }}
+                                        </span>
+                                    @endif
+                                </a>
+                            @endforeach
+                        @endfor
+                    @else
+                        <span class="inline-flex items-center text-white font-medium text-xs px-4">
+                            <span class="text-amber-300 mr-2">●</span> Dr. Ifeanyi Chukwuma Odii (Anyichuks) 2027 Campaign Movement Gaining Nationwide Momentum
+                        </span>
+                    @endif
+                </div>
+            </div>
+
+            <!-- Live Status Capsule on Far Right (Desktop only) -->
+            <div class="hidden lg:flex items-center gap-1.5 bg-[#990000]/80 backdrop-blur-sm px-3 py-1 h-full shrink-0 border-l border-red-800 text-[10px] font-bold text-red-100 uppercase tracking-wider">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>MEDIA INTEL</span>
             </div>
         </div>
     </header>
@@ -554,7 +632,7 @@
     <!-- World Clock Panel (Right Side, Fixed globally matching desktop view, Hidden on mobile) -->
     <div id="world-clocks-panel"
         class="hidden md:flex fixed right-6 md:right-12 lg:right-12 z-[30] flex-col gap-4 p-5 bg-transparent w-[280px] transition-all"
-        style="top: 100px;">
+        style="top: 108px;">
         <div class="flex items-center justify-between pb-3 mb-1">
             <h3 class="text-[11px] font-extrabold tracking-widest text-white/60 uppercase">WORLD CLOCK</h3>
             <span class="flex h-2 w-2 relative">
@@ -583,13 +661,8 @@
                     </svg>
                 </div>
                 <div class="flex-grow min-w-0">
-                    <div class="flex items-center gap-1">
-                        <span class="text-xs font-bold tracking-wide text-cyan-400 truncate">Nigeria</span>
-                        <svg class="w-3 h-3 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                        </svg>
-                    </div>
-                    <div class="text-[9px] text-white/40 font-semibold tracking-wide flex gap-1 items-center">
+                    <span class="text-xs font-bold tracking-wide text-white/90 group-hover:text-amber-400 transition-colors truncate block">Abakaliki / Lagos</span>
+                    <div class="text-[9px] text-white/50 font-semibold tracking-wide flex gap-1 items-center">
                         <span id="day-nigeria">Today</span>
                         <span>•</span>
                         <span id="offset-nigeria">Home</span>
@@ -711,7 +784,7 @@
     </div>
 
     <!-- Main Content Container with Full-Bleed Layout on Desktop, Friendly Margins on Mobile -->
-    <main class="relative z-10 w-full flex-grow flex flex-col items-center justify-center pt-[72px] sm:pt-20 pb-8 px-3 sm:px-5 md:px-0 md:py-0">
+    <main class="relative z-10 w-full flex-grow flex flex-col items-center justify-center pt-[104px] sm:pt-[108px] md:pt-0 pb-8 px-3 sm:px-5 md:px-0 md:py-0">
         <!-- WordPress FAQ / Accordion Dropdown Blocks -->
         <div class="w-full max-w-7xl md:max-w-none mx-auto text-left flex flex-col gap-0 md:border-t md:border-white/10">
 
@@ -1352,7 +1425,7 @@
                 setTimeout(() => {
                     const panel = details.querySelector('.dropdown-content-panel');
                     if (panel && window.innerWidth <= 768) {
-                        const headerOffset = 72;
+                        const headerOffset = document.querySelector('header') ? document.querySelector('header').offsetHeight : 96;
                         const elementPosition = panel.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                         window.scrollTo({
@@ -2982,6 +3055,39 @@
         window.rotatePhoneTip = function() {
             alert("📱 Tip: Rotate your phone sideways to landscape orientation for the ultimate full-bleed executive boardroom view!");
         };
+
+        // Live Auto-Refresh for Breaking News Marquee from Media Intelligence
+        (function() {
+            function refreshBreakingNews() {
+                fetch('/api/breaking-news')
+                    .then(r => r.json())
+                    .then(data => {
+                        if (data && data.items && data.items.length > 0) {
+                            const track = document.getElementById('breaking-news-track');
+                            if (!track) return;
+                            let html = '';
+                            for (let loop = 0; loop < 2; loop++) {
+                                data.items.forEach(item => {
+                                    const url = item.url && !item.url.startsWith('javascript') ? item.url : 'javascript:void(0);';
+                                    const target = url !== 'javascript:void(0);' ? '_blank' : '_self';
+                                    const importance = item.importance ? item.importance.toLowerCase() : '';
+                                    const importanceBadge = ['breaking', 'high'].includes(importance)
+                                        ? `<span class="ml-2 px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider ${importance === 'breaking' ? 'bg-black/40 text-amber-300 border border-amber-300/40' : 'bg-red-900/60 text-white/90'}">${item.importance}</span>`
+                                        : '';
+                                    html += `<a href="${url}" target="${target}" rel="noopener noreferrer" class="inline-flex items-center text-white hover:text-amber-200 font-medium text-xs sm:text-sm px-4 sm:px-6 transition-colors group cursor-pointer">
+                                        <span class="text-amber-300 font-bold mr-2 text-xs">●</span>
+                                        <span class="group-hover:underline tracking-tight">${item.title}</span>
+                                        ${importanceBadge}
+                                    </a>`;
+                                });
+                            }
+                            track.innerHTML = html;
+                        }
+                    })
+                    .catch(() => {});
+            }
+            setInterval(refreshBreakingNews, 60000);
+        })();
     </script>
 
     <!-- Interactive Fullscreen Landscape Cinema Modal -->

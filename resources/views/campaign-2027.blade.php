@@ -75,6 +75,27 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
+        /* Breaking News Red Landscape Moving Line Ticker */
+        @keyframes ticker-landscape {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+
+        .breaking-news-track {
+            display: inline-flex;
+            width: max-content;
+            animation: ticker-landscape 55s linear infinite;
+        }
+
+        .breaking-news-track:hover,
+        .breaking-news-track:active {
+            animation-play-state: paused;
+        }
+
         .glass-card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -242,6 +263,60 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
+            </div>
+        </div>
+
+        <!-- Breaking News Live Ticker Line (Moving in landscape line just under the top bar header, in vibrant red line) -->
+        <div id="campaign-breaking-news-line"
+            class="w-full bg-[#cc0000] border-b border-red-800 text-white shadow-md flex items-center h-8 sm:h-9 overflow-hidden relative select-none">
+            <!-- Static High-Visibility Badge Pill on Left -->
+            <div class="flex items-center gap-1.5 sm:gap-2 bg-[#990000] px-2.5 sm:px-4 py-1 h-full shrink-0 z-20 shadow-md border-r border-red-800">
+                <span class="relative flex h-2 w-2 shrink-0">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-90"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                <span class="font-black text-[10px] sm:text-xs uppercase tracking-wider text-white whitespace-nowrap flex items-center gap-1">
+                    <span>BREAKING NEWS</span>
+                </span>
+            </div>
+
+            <!-- Continuous Landscape Moving Marquee Track -->
+            <div class="relative w-full overflow-hidden flex items-center h-full ticker-viewport">
+                <div class="breaking-news-track flex items-center whitespace-nowrap will-change-transform">
+                    @if(!empty($breakingNews) && count($breakingNews) > 0)
+                        @for($i = 0; $i < 2; $i++)
+                            @foreach($breakingNews as $item)
+                                @php
+                                    $itemUrl = data_get($item, 'url', 'javascript:void(0);');
+                                    $itemTitle = data_get($item, 'title', '');
+                                    $itemImportance = data_get($item, 'importance', '');
+                                @endphp
+                                <a href="{{ $itemUrl ?: 'javascript:void(0);' }}"
+                                   target="{{ !empty($itemUrl) && !str_starts_with($itemUrl, 'javascript') ? '_blank' : '_self' }}"
+                                   rel="noopener noreferrer"
+                                   class="inline-flex items-center text-white hover:text-amber-200 font-medium text-xs sm:text-sm px-4 sm:px-6 transition-colors group cursor-pointer">
+                                    <span class="text-amber-300 font-bold mr-2 text-xs">●</span>
+                                    <span class="group-hover:underline tracking-tight">{{ $itemTitle }}</span>
+                                    @if(!empty($itemImportance) && in_array(strtolower($itemImportance), ['breaking', 'high']))
+                                        <span class="ml-2 px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider {{ strtolower($itemImportance) === 'breaking' ? 'bg-black/40 text-amber-300 border border-amber-300/40' : 'bg-red-900/60 text-white/90' }}">
+                                            {{ $itemImportance }}
+                                        </span>
+                                    @endif
+                                </a>
+                            @endforeach
+                        @endfor
+                    @else
+                        <span class="inline-flex items-center text-white font-medium text-xs px-4">
+                            <span class="text-amber-300 mr-2">●</span> Dr. Ifeanyi Chukwuma Odii (Anyichuks) 2027 Campaign Movement Gaining Nationwide Momentum
+                        </span>
+                    @endif
+                </div>
+            </div>
+
+            <!-- Live Status Capsule on Far Right (Desktop only) -->
+            <div class="hidden lg:flex items-center gap-1.5 bg-[#990000]/80 backdrop-blur-sm px-3 py-1 h-full shrink-0 border-l border-red-800 text-[10px] font-bold text-red-100 uppercase tracking-wider">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>MEDIA INTEL</span>
             </div>
         </div>
     </header>
