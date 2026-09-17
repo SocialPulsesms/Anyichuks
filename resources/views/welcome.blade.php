@@ -108,22 +108,41 @@
             padding-left: 24px;
         }
 
-        /* Hide details marker */
-        summary::-webkit-details-marker,
+        /* Hide details marker completely across all modern browsers */
+        summary {
+            list-style: none !important;
+            list-style-type: none !important;
+        }
+        summary::-webkit-details-marker {
+            display: none !important;
+        }
         summary::marker {
             display: none !important;
+            content: "" !important;
+            font-size: 0 !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+        details > summary {
+            list-style: none !important;
         }
 
         /* Smooth scroll snapping */
         html {
             scroll-snap-type: y mandatory;
             scroll-behavior: smooth;
+            scroll-padding-top: 76px;
+        }
+
+        .accordion-section {
+            scroll-margin-top: 76px;
         }
 
         summary,
         .dropdown-content-panel {
             scroll-snap-align: start;
             scroll-snap-stop: always;
+            scroll-margin-top: 76px;
         }
 
         .word-span {
@@ -161,6 +180,7 @@
             html {
                 scroll-snap-type: none !important;
                 scroll-behavior: smooth !important;
+                scroll-padding-top: 72px !important;
                 -webkit-overflow-scrolling: touch;
             }
 
@@ -176,6 +196,23 @@
                 display: none !important;
             }
 
+            /* Hide details marker completely on mobile */
+            summary {
+                list-style: none !important;
+                list-style-type: none !important;
+                display: block !important;
+            }
+            summary::-webkit-details-marker {
+                display: none !important;
+            }
+            summary::marker {
+                display: none !important;
+                content: "" !important;
+                font-size: 0 !important;
+                width: 0 !important;
+                height: 0 !important;
+            }
+
             /* Disable rigid snapping and force natural fluid flow */
             summary,
             .dropdown-content-panel {
@@ -188,21 +225,22 @@
             .accordion-section {
                 margin-bottom: 16px !important;
                 width: 100% !important;
+                scroll-margin-top: 72px !important;
             }
 
             .accordion-section summary {
                 height: auto !important;
                 min-height: auto !important;
-                padding: 20px 16px !important;
+                padding: 22px 18px !important;
                 border-radius: 20px !important;
-                background: rgba(18, 21, 28, 0.88) !important;
+                background: rgba(18, 21, 28, 0.92) !important;
                 backdrop-filter: blur(16px) !important;
                 -webkit-backdrop-filter: blur(16px) !important;
-                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                border: 1px solid rgba(255, 255, 255, 0.12) !important;
                 box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5) !important;
-                display: flex !important;
-                flex-direction: column !important;
+                display: block !important;
                 position: relative !important;
+                cursor: pointer !important;
             }
 
             /* Remove absolute positioning so content flows naturally */
@@ -212,6 +250,9 @@
                 max-width: 100% !important;
                 width: 100% !important;
                 padding: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 16px !important;
             }
 
             .stylish-reveal-text {
@@ -220,21 +261,28 @@
                 color: #e2e8f0 !important;
                 max-height: none !important;
                 overflow: visible !important;
+                display: block !important;
+                opacity: 1 !important;
+                transform: none !important;
+                filter: none !important;
             }
 
-            /* Disable blurred fading word cycling on mobile so text is immediately readable */
-            .word-span {
+            /* Disable blurred fading word cycling on mobile so text is immediately readable and never disappears */
+            .word-span,
+            .word-span.assemble,
+            .word-span.fade-out {
                 opacity: 1 !important;
                 transform: none !important;
                 filter: none !important;
                 display: inline !important;
                 transition: none !important;
+                animation: none !important;
             }
 
             .hero-chevron-arrow {
-                width: 32px !important;
-                height: 20px !important;
-                max-width: 32px !important;
+                width: 28px !important;
+                height: 18px !important;
+                max-width: 28px !important;
                 stroke-width: 14 !important;
             }
 
@@ -248,6 +296,7 @@
                 background: rgba(13, 15, 20, 0.96) !important;
                 border: 1px solid rgba(255, 255, 255, 0.12) !important;
                 overflow: visible !important;
+                scroll-margin-top: 72px !important;
             }
         }
 
@@ -299,11 +348,11 @@
 
     <!-- Premium WordPress-style Header Navigation -->
     <header
-        class="fixed top-0 left-0 z-50 w-full bg-black/60 backdrop-blur-md border-b border-white/10 px-4 sm:px-6 lg:px-12 py-3 sm:py-4 transition-all">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+        class="fixed top-0 left-0 z-50 w-full bg-black/80 backdrop-blur-xl border-b border-white/10 px-3.5 sm:px-6 lg:px-12 py-2.5 sm:py-4 transition-all">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
 
             <!-- Logo -->
-            <a href="#section-home" class="text-lg sm:text-xl font-bold tracking-wider text-white uppercase shrink-0">
+            <a href="#section-home" class="text-sm sm:text-lg md:text-xl font-bold tracking-wide sm:tracking-wider text-white uppercase shrink-0 select-none">
                 ANYI GA EMEYA <span class="text-amber-400">2027</span>
             </a>
 
@@ -326,12 +375,12 @@
             </nav>
 
             <!-- Action Area: Button, Social Icons & Mobile Menu Toggle -->
-            <div class="flex items-center gap-2 sm:gap-3 lg:gap-5">
-                <!-- Join 2027 Movement Button (Always visible on mobile & desktop) -->
+            <div class="flex items-center gap-2 sm:gap-3 lg:gap-5 shrink-0">
+                <!-- Join 2027 Movement Button (Always visible on mobile & desktop, elegantly fitted) -->
                 <button type="button" onclick="window.openVolunteerModal(event);"
-                    class="relative z-10 px-3 sm:px-5 py-1.5 sm:py-2 bg-gradient-to-r from-amber-400 to-amber-500 text-black font-extrabold rounded-full hover:from-amber-300 hover:to-amber-400 hover:scale-105 transition-all text-[10px] sm:text-xs tracking-wider uppercase whitespace-nowrap shadow-lg shadow-amber-400/25 flex items-center gap-1.5 cursor-pointer">
-                    <span class="w-1.5 h-1.5 rounded-full bg-black animate-ping"></span>
-                    <span>Join 2027 Movement</span>
+                    class="relative z-10 px-2.5 sm:px-5 py-1.5 sm:py-2 bg-gradient-to-r from-amber-400 to-amber-500 text-black font-extrabold rounded-full hover:from-amber-300 hover:to-amber-400 active:scale-95 transition-all text-[10px] sm:text-xs tracking-wider uppercase whitespace-nowrap shadow-md shadow-amber-400/20 flex items-center gap-1 sm:gap-1.5 cursor-pointer shrink-0">
+                    <span class="w-1.5 h-1.5 rounded-full bg-black animate-ping shrink-0"></span>
+                    <span>Join <span class="hidden sm:inline">2027 Movement</span><span class="sm:hidden">2027</span></span>
                 </button>
 
                 <!-- Social Icons (Visible on Desktop Only to Avoid Mobile Clutter) -->
@@ -376,7 +425,7 @@
 
                 <!-- Mobile Menu Hamburger Button -->
                 <button type="button" onclick="window.toggleMobileNav()" id="mobile-nav-toggle"
-                    class="md:hidden flex p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors items-center justify-center cursor-pointer border border-white/15"
+                    class="md:hidden flex p-2 rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 text-white transition-all items-center justify-center cursor-pointer border border-white/15 shrink-0"
                     aria-label="Toggle Mobile Navigation Menu">
                     <svg id="hamburger-icon" class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -659,7 +708,7 @@
     </div>
 
     <!-- Main Content Container with Full-Bleed Layout on Desktop, Friendly Margins on Mobile -->
-    <main class="relative z-10 w-full flex-grow flex flex-col items-center justify-center pt-20 pb-8 px-3 sm:px-5 md:px-0 md:py-0">
+    <main class="relative z-10 w-full flex-grow flex flex-col items-center justify-center pt-[72px] sm:pt-20 pb-8 px-3 sm:px-5 md:px-0 md:py-0">
         <!-- WordPress FAQ / Accordion Dropdown Blocks -->
         <div class="w-full max-w-7xl md:max-w-none mx-auto text-left flex flex-col gap-0 md:border-t md:border-white/10">
 
@@ -669,18 +718,19 @@
                     <!-- Removed redundant background image for steady parallax effect -->
 
                     <!-- Dark overlay to ensure text readability -->
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none">
                     </div>
 
                     <!-- Mobile Dedicated 16:9 Boardroom Showcase Card (Mobile Only: 100% Uncropped Boardroom View) -->
                     <div class="md:hidden w-full mb-4">
-                        <div class="w-full aspect-video rounded-2xl overflow-hidden relative border border-amber-400/40 shadow-2xl bg-black">
-                            <img src="{{ asset('images/landing-profile.png') }}?v={{ file_exists(public_path('images/landing-profile.png')) ? filemtime(public_path('images/landing-profile.png')) : time() }}"
+                        <div class="w-full aspect-video rounded-xl sm:rounded-2xl overflow-hidden relative border border-amber-400/40 shadow-2xl bg-black">
+                            <img id="mobile-boardroom-card-img"
+                                 src="{{ asset('images/landing-profile.png') }}?v={{ file_exists(public_path('images/landing-profile.png')) ? filemtime(public_path('images/landing-profile.png')) : time() }}"
                                  alt="Dr. Ifeanyi Chukwuma Odii - ANYI GA EMEYA 2027 PDP Flagship"
-                                 class="w-full h-full object-cover">
+                                 class="w-full h-full object-cover transition-all duration-300 select-none">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
                             <!-- Badge -->
-                            <div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-amber-400/60 text-[10px] font-bold text-amber-300">
+                            <div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-amber-400/60 text-[10px] font-bold text-amber-300 shadow-md">
                                 <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
                                 <span>ANYI GA EMEYA 2027 PDP</span>
                             </div>
@@ -1295,54 +1345,63 @@
                     }
                 });
 
-                // Wait a brief tick for the browser to register the opening state, then scroll the dropdown panel into view
+                // Smooth auto-scroll with header offset so open accordion content is never covered by header
                 setTimeout(() => {
                     const panel = details.querySelector('.dropdown-content-panel');
-                    if (panel) {
+                    if (panel && window.innerWidth <= 768) {
+                        const headerOffset = 72;
+                        const elementPosition = panel.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    } else if (panel) {
                         panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
-                }, 80);
+                }, 100);
             });
         });
 
-        // Typewriter word-assembly animation for Home Vision Statement
-        document.querySelectorAll('.stylish-reveal-text').forEach((textContainer) => {
-            const text = textContainer.textContent.trim();
-            const words = text.split(/\s+/);
+        // Typewriter word-assembly animation for Home Vision Statement (Desktop Only to ensure instant, stable mobile UX)
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.stylish-reveal-text').forEach((textContainer) => {
+                const text = textContainer.textContent.trim();
+                const words = text.split(/\s+/);
 
-            // Re-render text wrapped in custom inline-block spans with transition delays
-            textContainer.innerHTML = words.map((word, index) => {
-                return `<span class="word-span" style="animation-delay: ${index * 80}ms; transition-delay: ${index * 80}ms;">${word}</span>`;
-            }).join(' ');
+                // Re-render text wrapped in custom inline-block spans with transition delays
+                textContainer.innerHTML = words.map((word, index) => {
+                    return `<span class="word-span" style="animation-delay: ${index * 80}ms; transition-delay: ${index * 80}ms;">${word}</span>`;
+                }).join(' ');
 
-            function playCycle() {
-                const spans = textContainer.querySelectorAll('.word-span');
+                function playCycle() {
+                    const spans = textContainer.querySelectorAll('.word-span');
 
-                // 1. Staggered reveal bounce entry
-                spans.forEach(span => {
-                    span.classList.remove('fade-out');
-                    span.classList.add('assemble');
-                });
-
-                // 2. Stable display of full statement for 4 seconds after assembly is fully complete
-                // Words count is words.length, each delayed by 80ms.
-                const totalStaggerMs = words.length * 80;
-                setTimeout(() => {
-                    // 3. Simultaneous smooth blurred fade-out
+                    // 1. Staggered reveal bounce entry
                     spans.forEach(span => {
-                        span.classList.remove('assemble');
-                        span.classList.add('fade-out');
+                        span.classList.remove('fade-out');
+                        span.classList.add('assemble');
                     });
-                }, totalStaggerMs + 4000);
-            }
 
-            // Run initial loop
-            playCycle();
+                    // 2. Stable display of full statement for 4 seconds after assembly is fully complete
+                    const totalStaggerMs = words.length * 80;
+                    setTimeout(() => {
+                        // 3. Simultaneous smooth blurred fade-out
+                        spans.forEach(span => {
+                            span.classList.remove('assemble');
+                            span.classList.add('fade-out');
+                        });
+                    }, totalStaggerMs + 4000);
+                }
 
-            // Loop forever: Assembly Stagger time + 4s stable time + 500ms fadeout + 500ms pause
-            const totalIntervalMs = (words.length * 80) + 5000;
-            setInterval(playCycle, totalIntervalMs);
-        });
+                // Run initial loop
+                playCycle();
+
+                // Loop forever: Assembly Stagger time + 4s stable time + 500ms fadeout + 500ms pause
+                const totalIntervalMs = (words.length * 80) + 5000;
+                setInterval(playCycle, totalIntervalMs);
+            });
+        }
 
         // Philanthropy Modal Trigger Logic
         document.addEventListener('DOMContentLoaded', () => {
@@ -2823,6 +2882,10 @@
                     const bgImg = document.getElementById('site-bg-image');
                     if (bgImg) {
                         bgImg.style.objectPosition = `${newPercent}% 25%`;
+                    }
+                    const mobileCardImg = document.getElementById('mobile-boardroom-card-img');
+                    if (mobileCardImg) {
+                        mobileCardImg.style.objectPosition = `${newPercent}% center`;
                     }
                 }, { passive: true });
 
