@@ -231,14 +231,15 @@
             .accordion-section summary {
                 height: auto !important;
                 min-height: auto !important;
-                padding: 22px 18px !important;
+                padding: 20px 16px !important;
                 border-radius: 20px !important;
                 background: rgba(18, 21, 28, 0.92) !important;
                 backdrop-filter: blur(16px) !important;
                 -webkit-backdrop-filter: blur(16px) !important;
                 border: 1px solid rgba(255, 255, 255, 0.12) !important;
                 box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5) !important;
-                display: block !important;
+                display: flex !important;
+                flex-direction: column !important;
                 position: relative !important;
                 cursor: pointer !important;
             }
@@ -741,7 +742,7 @@
 
                     <!-- Small title on the far left (Exact Desktop Layout from Screenshot) -->
                     <div
-                        class="summary-text-container absolute left-6 md:left-12 top-1/2 -translate-y-1/2 flex flex-col gap-3 md:gap-4 z-10 max-w-[460px] lg:max-w-[540px] text-left">
+                        class="summary-text-container relative md:absolute left-0 md:left-12 top-auto md:top-1/2 transform-none md:-translate-y-1/2 flex flex-col gap-3 md:gap-4 z-10 w-full md:max-w-[460px] lg:max-w-[540px] text-left">
                         <p
                             class="stylish-reveal-text text-sm md:text-base lg:text-lg font-light text-gray-200 leading-relaxed tracking-wide">
                             Dr. Ifeanyi Chukwuma Odii is a businessman and philanthropist with vast experience spanning
@@ -916,7 +917,7 @@
 
                     <!-- Small title on the far left -->
                     <div
-                        class="summary-text-container absolute left-6 md:left-12 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-10 max-w-[90%] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[600px] text-left">
+                        class="summary-text-container relative md:absolute left-0 md:left-12 top-auto md:top-1/2 transform-none md:-translate-y-1/2 flex flex-col gap-4 z-10 w-full md:max-w-[500px] lg:max-w-[600px] text-left">
                         <p
                             class="stylish-reveal-text text-sm md:text-base lg:text-lg font-light text-gray-200 leading-relaxed tracking-wide">
                             Ebele and Anyichuks foundation donated 10,000 copies of the West Africa Examination Council
@@ -967,7 +968,7 @@
 
                     <!-- Small title on the far left -->
                     <div
-                        class="summary-text-container absolute left-6 md:left-12 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-10 max-w-[90%] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[600px] text-left">
+                        class="summary-text-container relative md:absolute left-0 md:left-12 top-auto md:top-1/2 transform-none md:-translate-y-1/2 flex flex-col gap-4 z-10 w-full md:max-w-[500px] lg:max-w-[600px] text-left">
                         <p
                             class="stylish-reveal-text text-sm md:text-base lg:text-lg font-light text-gray-200 leading-relaxed tracking-wide">
                             Stay informed with real-time, live updates from trusted news networks across Nigeria,
@@ -1034,7 +1035,7 @@
 
                     <!-- Small title on the far left -->
                     <div
-                        class="summary-text-container absolute left-6 md:left-12 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-10 max-w-[90%] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[600px] text-left">
+                        class="summary-text-container relative md:absolute left-0 md:left-12 top-auto md:top-1/2 transform-none md:-translate-y-1/2 flex flex-col gap-4 z-10 w-full md:max-w-[500px] lg:max-w-[600px] text-left">
                         <p
                             class="stylish-reveal-text text-sm md:text-base lg:text-lg font-light text-gray-200 leading-relaxed tracking-wide">
                             Explore our latest media broadcasts, entertainment showcases, and exclusive video coverage.
@@ -1181,7 +1182,7 @@
 
                     <!-- Small title on the far left -->
                     <div
-                        class="summary-text-container absolute left-6 md:left-12 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-10 max-w-[90%] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[800px] text-left">
+                        class="summary-text-container relative md:absolute left-0 md:left-12 top-auto md:top-1/2 transform-none md:-translate-y-1/2 flex flex-col gap-4 z-10 w-full md:max-w-[500px] lg:max-w-[600px] xl:max-w-[800px] text-left">
                         <p
                             class="stylish-reveal-text text-sm md:text-base lg:text-lg font-light text-gray-200 leading-relaxed tracking-wide md:max-h-[60vh] md:overflow-y-auto custom-scrollbar pr-2 pb-2">
                             My good people of Ebonyi State, I stand before you not just as a politician, but as a man
@@ -1268,7 +1269,7 @@
 
                     <!-- Small title on the far left -->
                     <div
-                        class="summary-text-container absolute left-6 md:left-12 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-10 max-w-[90%] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[600px] text-left">
+                        class="summary-text-container relative md:absolute left-0 md:left-12 top-auto md:top-1/2 transform-none md:-translate-y-1/2 flex flex-col gap-4 z-10 w-full md:max-w-[500px] lg:max-w-[600px] text-left">
                         <p
                             class="stylish-reveal-text text-sm md:text-base lg:text-lg font-light text-gray-200 leading-relaxed tracking-wide">
                             Dr. Ifeanyi Chukwuma Odii is a businessman and philanthropist with vast experience spanning
