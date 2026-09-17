@@ -494,26 +494,6 @@
                     <a href="https://www.tiktok.com/@ifeanyicodii" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white hover:border-amber-400 transition-colors">
                         <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-1.15 4.39-2.92 5.86-1.57 1.3-3.66 1.94-5.69 1.7-2.12-.23-4.06-1.3-5.32-2.93-1.39-1.78-1.92-4.14-1.42-6.32.48-2.17 1.87-4.07 3.8-5.11 2.01-1.07 4.43-1.22 6.6-.47v4.15c-1.16-.36-2.45-.41-3.63-.04-1.12.35-2.09 1.11-2.6 2.16-.54 1.12-.59 2.44-.15 3.59.45 1.2 1.48 2.15 2.72 2.49 1.28.36 2.69.19 3.84-.46 1.19-.69 1.99-1.91 2.18-3.26.23-1.48.16-2.98.17-4.47V.02z"></path></svg>
                         <span class="font-medium truncate">TikTok</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Boardroom Visual Hotspots -->
-            <div class="mt-4 pt-4 border-t border-white/10 flex flex-col gap-2 pb-6">
-                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Boardroom Visual Views</span>
-                <div class="grid grid-cols-2 gap-2">
-                    <button type="button" onclick="window.closeMobileNav(); window.panBoardroom(12, 'flag')" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-left text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer">
-                        <span>🚩</span> <span>Standing PDP Flag</span>
-                    </button>
-                    <button type="button" onclick="window.closeMobileNav(); window.panBoardroom(50, 'center')" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-left text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer">
-                        <span>👤</span> <span>Anyichuks Center</span>
-                    </button>
-                    <button type="button" onclick="window.closeMobileNav(); window.panBoardroom(88, 'gov')" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-left text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer">
-                        <span>🏛️</span> <span>Gov 2027 Flag</span>
-                    </button>
-                    <button type="button" onclick="window.closeMobileNav(); window.openLandscapeCinema()" class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-400/40 text-xs text-left text-emerald-300 flex items-center gap-2 cursor-pointer">
-                        <span>🔄</span> <span>Landscape Cinema</span>
-                    </button>
                 </div>
             </div>
         </div>
@@ -704,40 +684,7 @@
                                 <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
                                 <span>ANYI GA EMEYA 2027 PDP</span>
                             </div>
-                            <!-- Cinema Mode Button -->
-                            <button type="button" onclick="event.stopPropagation(); window.openLandscapeCinema()"
-                                class="absolute bottom-2.5 right-2.5 px-3 py-1.5 rounded-xl bg-black/85 backdrop-blur-md border border-cyan-400/60 text-[11px] font-bold text-cyan-300 flex items-center gap-1.5 shadow-lg active:scale-95 cursor-pointer">
-                                <span>🔄 Cinema Fullscreen</span>
-                            </button>
                         </div>
-                        <!-- Mobile Visual Hotspot Quick Chips -->
-                        <div class="flex items-center gap-1.5 mt-2.5 overflow-x-auto pb-1 no-scrollbar">
-                            <button type="button" onclick="event.stopPropagation(); window.showHotspotPopup('flag')" class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[10px] font-medium text-gray-300 whitespace-nowrap active:bg-white/15">
-                                🚩 PDP Flag
-                            </button>
-                            <button type="button" onclick="event.stopPropagation(); window.showHotspotPopup('gov-flag')" class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[10px] font-medium text-gray-300 whitespace-nowrap active:bg-white/15">
-                                🏛️ Table Flag
-                            </button>
-                            <a href="/campaign-2027" onclick="event.stopPropagation();" class="px-2.5 py-1 rounded-lg bg-amber-400/15 border border-amber-400/40 text-[10px] font-bold text-amber-300 whitespace-nowrap active:bg-amber-400/25 flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
-                                War Room 2027
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Desktop Boardroom Hotspots (Visible on Desktop only) -->
-                    <div class="hidden md:flex absolute top-28 md:top-32 left-6 md:left-12 z-20 flex-wrap items-center gap-2 pointer-events-auto">
-                        <button type="button" onclick="event.stopPropagation(); window.showHotspotPopup('flag')" class="px-2.5 py-1.5 rounded-full bg-black/80 border border-emerald-400/60 text-emerald-300 text-[10px] font-bold flex items-center gap-1.5 shadow-xl backdrop-blur-md hover:scale-105 active:scale-95 transition-all cursor-pointer group">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>🚩 Standing PDP Flag</span>
-                        </button>
-                        <button type="button" onclick="event.stopPropagation(); window.showHotspotPopup('gov-flag')" class="px-2.5 py-1.5 rounded-full bg-black/80 border border-amber-400/60 text-amber-300 text-[10px] font-bold flex items-center gap-1.5 shadow-xl backdrop-blur-md hover:scale-105 active:scale-95 transition-all cursor-pointer group">
-                            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                            <span>🏛️ Gov 2027 Table Flag</span>
-                        </button>
-                        <button type="button" onclick="event.stopPropagation(); window.openLandscapeCinema()" class="px-2.5 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 text-[10px] font-bold flex items-center gap-1.5 shadow-xl backdrop-blur-md hover:scale-105 active:scale-95 transition-all cursor-pointer">
-                            <span>🔄 Cinema Mode</span>
-                        </button>
                     </div>
 
                     <!-- Small title on the far left (Exact Desktop Layout from Screenshot) -->
