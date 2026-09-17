@@ -225,10 +225,6 @@
                 <a href="/" class="hidden sm:inline-flex items-center gap-1 text-xs text-gray-400 hover:text-white px-3 py-2 rounded-lg border border-white/10 hover:border-white/20 transition-colors">
                     &larr; Portfolio Site
                 </a>
-                <a href="#pillar-crowdfunding"
-                    class="hidden md:inline-flex px-4 py-2.5 rounded-xl border border-amber-400/50 text-amber-300 hover:bg-amber-400/10 text-xs font-bold uppercase tracking-wider transition-all">
-                    Diaspora Fund
-                </a>
                 <a href="#pillar-ambassadors"
                     class="gold-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 cursor-pointer shadow-lg shadow-amber-500/20">
                     <span>Join Movement</span>
@@ -456,7 +452,6 @@
                 <a href="#pillar-ai-townhall" class="hover:text-amber-400 transition-colors py-1 px-3 rounded-lg hover:bg-white/5">Pillar 2: AI Town Hall & WhatsApp</a>
                 <a href="#pillar-manifesto" class="hover:text-amber-400 transition-colors py-1 px-3 rounded-lg hover:bg-white/5">Pillar 3: Governance Blueprint</a>
                 <a href="#pillar-ambassadors" class="hover:text-amber-400 transition-colors py-1 px-3 rounded-lg hover:bg-white/5">Pillar 4: Ambassadors Club</a>
-                <a href="#pillar-crowdfunding" class="hover:text-amber-400 transition-colors py-1 px-3 rounded-lg hover:bg-white/5">Diaspora Fund</a>
             </div>
         </div>
     </div>
@@ -851,245 +846,150 @@
     </section>
 
     <!-- ========================================================================= -->
-    <!-- PILLAR 4: AMBASSADORS CLUB & DIASPORA CROWDFUNDING -->
+    <!-- PILLAR 4: AMBASSADORS CLUB -->
     <!-- ========================================================================= -->
     <section id="pillar-ambassadors" class="py-24 relative border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <!-- Ambassador Gamification & Badge Generator -->
-                <div class="lg:col-span-7 space-y-8">
-                    <div>
-                        <div class="flex items-center gap-2 text-amber-400 text-xs font-extrabold uppercase tracking-widest mb-2">
-                            <span class="font-mono text-base">04.</span> Volunteer Network Gamification
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                            "Anyichuks 2027 Ambassadors" <span class="gold-gradient-text">Club</span>
-                        </h2>
-                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
-                            Sign up as a verified campaign champion. Receive your official digital ambassador credential signed by Dr. Odii, recruit your network, and unlock campaign ranks.
-                        </p>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-8">
+                <div>
+                    <div class="flex items-center gap-2 text-amber-400 text-xs font-extrabold uppercase tracking-widest mb-2">
+                        <span class="font-mono text-base">04.</span> Volunteer Network Gamification
                     </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        "Anyichuks 2027 Ambassadors" <span class="gold-gradient-text">Club</span>
+                    </h2>
+                    <p class="text-gray-400 text-sm mt-2 leading-relaxed">
+                        Sign up as a verified campaign champion. Receive your official digital ambassador credential signed by Dr. Odii, recruit your network, and unlock campaign ranks.
+                    </p>
+                </div>
 
-                    <!-- Rank Progression Explanation -->
-                    <div class="grid grid-cols-3 gap-3">
-                        <div class="p-4 rounded-2xl bg-black/40 border border-white/10 text-center space-y-1">
-                            <span class="text-xs text-amber-400 font-mono font-bold">RANK 1</span>
-                            <h5 class="text-xs sm:text-sm font-bold text-white">Grassroots Advocate</h5>
-                            <p class="text-[10px] text-gray-400">Onboards 1-5 supporters</p>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-black/40 border border-white/10 text-center space-y-1">
-                            <span class="text-xs text-amber-400 font-mono font-bold">RANK 2</span>
-                            <h5 class="text-xs sm:text-sm font-bold text-white">Ward Commander</h5>
-                            <p class="text-[10px] text-gray-400">Coordinates 10+ voters</p>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-black/40 border border-white/10 text-center space-y-1">
-                            <span class="text-xs text-amber-400 font-mono font-bold">RANK 3</span>
-                            <h5 class="text-xs sm:text-sm font-bold text-white">State Ambassador</h5>
-                            <p class="text-[10px] text-gray-400">VIP Strategy Briefings</p>
-                        </div>
+                <!-- Rank Progression Explanation -->
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 text-center space-y-1">
+                        <span class="text-xs text-amber-400 font-mono font-bold">RANK 1</span>
+                        <h5 class="text-xs sm:text-sm font-bold text-white">Grassroots Advocate</h5>
+                        <p class="text-[10px] text-gray-400">Onboards 1-5 supporters</p>
                     </div>
-
-                    <!-- Instant Ambassador Registration Form -->
-                    <form action="javascript:void(0);" onsubmit="event.preventDefault(); window.submitAmbassadorHub(event); return false;" class="glass-card p-6 sm:p-8 rounded-3xl space-y-4 border-2 border-amber-400/30">
-                        <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                            <h4 class="font-bold text-white text-base">Claim Your Official 2027 Credential</h4>
-                            <span class="text-xs text-amber-400 font-mono">100% Free • Verified</span>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Full Name *</label>
-                                <input type="text" id="amb-name" required placeholder="e.g. Chinedu Eze"
-                                    class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Phone / WhatsApp *</label>
-                                <input type="tel" id="amb-phone" required placeholder="e.g. 08012345678"
-                                    class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Ebonyi LGA *</label>
-                                <select id="amb-lga" required
-                                    class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
-                                    <option value="Abakaliki">Abakaliki</option>
-                                    <option value="Afikpo North">Afikpo North</option>
-                                    <option value="Afikpo South">Afikpo South (Edda)</option>
-                                    <option value="Ebonyi">Ebonyi</option>
-                                    <option value="Ezza North">Ezza North</option>
-                                    <option value="Ezza South">Ezza South</option>
-                                    <option value="Ikwo">Ikwo</option>
-                                    <option value="Ishielu">Ishielu</option>
-                                    <option value="Ivo">Ivo</option>
-                                    <option value="Izzi">Izzi</option>
-                                    <option value="Ohaozara">Ohaozara</option>
-                                    <option value="Ohaukwu">Ohaukwu</option>
-                                    <option value="Onicha">Onicha</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Ward / Community</label>
-                                <input type="text" id="amb-ward" placeholder="e.g. Kpirikpiri Ward"
-                                    class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Preferred Campaign Role *</label>
-                            <select id="amb-role" required
-                                class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
-                                <option value="Grassroots Mobilizer">Grassroots Mobilizer (Community Organizer)</option>
-                                <option value="Youth Wing Pioneer">Youth Wing Pioneer & Tech Advocate</option>
-                                <option value="Women Mobilization Leader">Women Mobilization Leader</option>
-                                <option value="Polling Unit Agent / Monitor">Polling Unit Agent / Election Day Monitor</option>
-                                <option value="Media & Digital Campaigner">Media & Digital Warrior</option>
-                                <option value="Diaspora Supporter">Diaspora Supporter</option>
-                            </select>
-                        </div>
-
-                        <div class="pt-3">
-                            <button type="submit" id="amb-submit-btn"
-                                style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important; color: #000000 !important; font-weight: 800 !important; border: 1px solid #fbbf24 !important; box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4) !important;"
-                                class="w-full py-4 px-6 bg-amber-400 hover:bg-amber-300 text-black font-extrabold text-sm uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer">
-                                <span id="amb-btn-text">Generate My Official 2027 Ambassador Badge</span>
-                                <span class="text-base">&rarr;</span>
-                            </button>
-                        </div>
-                    </form>
-
-                    <!-- Ambassador Badge Card Display (Rendered after submit or preview) -->
-                    <div id="ambassador-badge-card" class="hidden glass-card p-6 rounded-3xl border-2 border-amber-400/60 relative overflow-hidden space-y-4">
-                        <div class="flex justify-between items-center border-b border-white/10 pb-3">
-                            <div class="flex items-center gap-2">
-                                <span class="font-serif font-black text-amber-400">ANYI GA EMEYA 2027</span>
-                                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-bold">OFFICIAL CREDENTIAL</span>
-                            </div>
-                            <span class="font-mono text-xs text-gray-400" id="card-badge-id">ANYI27-0000</span>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-16 h-16 rounded-2xl bg-amber-400/20 border-2 border-amber-400/50 flex items-center justify-center text-2xl font-black text-amber-400">
-                                🎖️
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-white" id="card-name">Ambassador Name</h4>
-                                <div class="text-xs text-amber-400 font-semibold" id="card-role">Grassroots Mobilizer</div>
-                                <div class="text-[11px] text-gray-400">Jurisdiction: <span class="text-white" id="card-lga">Abakaliki LGA</span></div>
-                            </div>
-                        </div>
-
-                        <!-- Referral Link Area -->
-                        <div class="p-4 rounded-2xl bg-black/60 border border-white/10 space-y-2">
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Your Unique Campaign Referral Link:</span>
-                            <div class="flex gap-2">
-                                <input type="text" id="amb-ref-link" readonly
-                                    class="w-full px-3 py-2 bg-black/80 border border-white/10 rounded-lg text-xs font-mono text-amber-300 focus:outline-none">
-                                <button onclick="window.copyReferralLink()"
-                                    class="px-4 py-2 bg-amber-400 hover:bg-amber-300 text-black text-xs font-bold rounded-lg cursor-pointer transition-colors">
-                                    Copy
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-2">
-                            <button onclick="window.shareBadgeWhatsApp()"
-                                class="w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-colors">
-                                <span>Share on WhatsApp Status</span>
-                            </button>
-                        </div>
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 text-center space-y-1">
+                        <span class="text-xs text-amber-400 font-mono font-bold">RANK 2</span>
+                        <h5 class="text-xs sm:text-sm font-bold text-white">Ward Commander</h5>
+                        <p class="text-[10px] text-gray-400">Coordinates 10+ voters</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 text-center space-y-1">
+                        <span class="text-xs text-amber-400 font-mono font-bold">RANK 3</span>
+                        <h5 class="text-xs sm:text-sm font-bold text-white">State Ambassador</h5>
+                        <p class="text-[10px] text-gray-400">VIP Strategy Briefings</p>
                     </div>
                 </div>
 
-                <!-- ============================================================= -->
-                <!-- DIASPORA & FRIENDS OF ANYICHUKS CONTRIBUTION PORTAL -->
-                <!-- ============================================================= -->
-                <div class="lg:col-span-5 space-y-8" id="pillar-crowdfunding">
-                    <div>
-                        <div class="flex items-center gap-2 text-cyan-400 text-xs font-extrabold uppercase tracking-widest mb-2">
-                            <span class="font-mono text-base">★</span> Campaign Crowdfunding
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                            Diaspora & Friends <span class="gold-gradient-text">Contribution Portal</span>
-                        </h2>
-                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
-                            Enabling Ebonyians in Lagos, Abuja, the UK, USA, Canada, and Europe to contribute financially
-                            with complete transparency and instant digital campaign receipts.
-                        </p>
+                <!-- Instant Ambassador Registration Form -->
+                <form action="javascript:void(0);" onsubmit="event.preventDefault(); window.submitAmbassadorHub(event); return false;" class="glass-card p-6 sm:p-8 rounded-3xl space-y-4 border-2 border-amber-400/30">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                        <h4 class="font-bold text-white text-base">Claim Your Official 2027 Credential</h4>
+                        <span class="text-xs text-amber-400 font-mono">100% Free • Verified</span>
                     </div>
 
-                    <!-- Donation Portal Card -->
-                    <form action="javascript:void(0);" onsubmit="event.preventDefault(); window.submitCampaignDonation(event); return false;" class="glass-card p-6 sm:p-8 rounded-3xl space-y-5 border border-white/15">
-                        <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                            <span class="text-xs font-bold uppercase tracking-wider text-gray-300">Choose Currency & Amount</span>
-                            <div class="flex gap-1 text-xs">
-                                <button type="button" onclick="window.setCurrency('USD')" id="curr-usd" class="px-2.5 py-1 rounded bg-amber-400 text-black font-bold">USD ($)</button>
-                                <button type="button" onclick="window.setCurrency('NGN')" id="curr-ngn" class="px-2.5 py-1 rounded bg-white/10 text-gray-300 hover:text-white font-bold">NGN (₦)</button>
-                            </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Full Name *</label>
+                            <input type="text" id="amb-name" required placeholder="e.g. Chinedu Eze"
+                                class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
                         </div>
-
-                        <!-- Preset Amount Buttons -->
-                        <div class="grid grid-cols-4 gap-2" id="preset-amounts">
-                            <button type="button" onclick="window.setAmount(25)" class="p-3 rounded-xl bg-white/5 hover:bg-amber-400/20 border border-white/10 text-white font-mono font-bold text-sm transition-all">$25</button>
-                            <button type="button" onclick="window.setAmount(50)" class="p-3 rounded-xl bg-amber-400/20 border border-amber-400 text-amber-300 font-mono font-bold text-sm transition-all" id="amt-default">$50</button>
-                            <button type="button" onclick="window.setAmount(100)" class="p-3 rounded-xl bg-white/5 hover:bg-amber-400/20 border border-white/10 text-white font-mono font-bold text-sm transition-all">$100</button>
-                            <button type="button" onclick="window.setAmount(500)" class="p-3 rounded-xl bg-white/5 hover:bg-amber-400/20 border border-white/10 text-white font-mono font-bold text-sm transition-all">$500</button>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Phone / WhatsApp *</label>
+                            <input type="tel" id="amb-phone" required placeholder="e.g. 08012345678"
+                                class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
                         </div>
+                    </div>
 
-                        <div class="space-y-3">
-                            <div>
-                                <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Custom Amount</label>
-                                <input type="number" id="don-amount" value="50" min="5" required
-                                    class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white font-mono text-sm focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Donor Name / Organization</label>
-                                <input type="text" id="don-name" placeholder="e.g. Engr. Obinna Nwankwo (Dallas, TX)" required
-                                    class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Email for Official Receipt</label>
-                                <input type="email" id="don-email" placeholder="e.g. obinna@example.com" required
-                                    class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Payment Channel</label>
-                                <select id="don-method" class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
-                                    <option value="Paystack">Paystack (Visa, Mastercard, Bank Transfer)</option>
-                                    <option value="Flutterwave">Flutterwave Global (Stripe, Apple Pay)</option>
-                                    <option value="Direct Campaign Account">Direct Campaign Bank Transfer (Zenith / UBA)</option>
-                                </select>
-                            </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Ebonyi LGA *</label>
+                            <select id="amb-lga" required
+                                class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
+                                <option value="Abakaliki">Abakaliki</option>
+                                <option value="Afikpo North">Afikpo North</option>
+                                <option value="Afikpo South">Afikpo South (Edda)</option>
+                                <option value="Ebonyi">Ebonyi</option>
+                                <option value="Ezza North">Ezza North</option>
+                                <option value="Ezza South">Ezza South</option>
+                                <option value="Ikwo">Ikwo</option>
+                                <option value="Ishielu">Ishielu</option>
+                                <option value="Ivo">Ivo</option>
+                                <option value="Izzi">Izzi</option>
+                                <option value="Ohaozara">Ohaozara</option>
+                                <option value="Ohaukwu">Ohaukwu</option>
+                                <option value="Onicha">Onicha</option>
+                            </select>
                         </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Ward / Community</label>
+                            <input type="text" id="amb-ward" placeholder="e.g. Kpirikpiri Ward"
+                                class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
+                        </div>
+                    </div>
 
-                        <button type="submit" id="don-btn"
-                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important; color: #ffffff !important; font-weight: 800 !important; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4) !important;"
-                            class="w-full py-4 px-6 rounded-xl text-sm font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-all">
-                            <span>Authenticate Contribution & Generate Receipt</span>
-                            <span>&rarr;</span>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase mb-1.5">Preferred Campaign Role *</label>
+                        <select id="amb-role" required
+                            class="w-full px-4 py-2.5 bg-black/60 border border-white/15 focus:border-amber-400 rounded-xl text-white text-sm focus:outline-none">
+                            <option value="Grassroots Mobilizer">Grassroots Mobilizer (Community Organizer)</option>
+                            <option value="Youth Wing Pioneer">Youth Wing Pioneer & Tech Advocate</option>
+                            <option value="Women Mobilization Leader">Women Mobilization Leader</option>
+                            <option value="Polling Unit Agent / Monitor">Polling Unit Agent / Election Day Monitor</option>
+                            <option value="Media & Digital Campaigner">Media & Digital Warrior</option>
+                            <option value="Diaspora Supporter">Diaspora Supporter</option>
+                        </select>
+                    </div>
+
+                    <div class="pt-3">
+                        <button type="submit" id="amb-submit-btn"
+                            style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important; color: #000000 !important; font-weight: 800 !important; border: 1px solid #fbbf24 !important; box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4) !important;"
+                            class="w-full py-4 px-6 bg-amber-400 hover:bg-amber-300 text-black font-extrabold text-sm uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer">
+                            <span id="amb-btn-text">Generate My Official 2027 Ambassador Badge</span>
+                            <span class="text-base">&rarr;</span>
                         </button>
-                    </form>
+                    </div>
+                </form>
 
-                    <!-- Official Campaign Donation Receipt Display -->
-                    <div id="donation-receipt-view" class="hidden p-6 rounded-3xl bg-zinc-950 border-2 border-emerald-400/50 space-y-4 text-center font-mono">
-                        <div class="flex justify-between items-center border-b border-white/10 pb-2 text-[10px] text-gray-400">
-                            <span>ANYI GA EMEYA 2027 CAMPAIGN</span>
-                            <span id="rec-id">ANYI27-REC-000000</span>
+                <!-- Ambassador Badge Card Display (Rendered after submit or preview) -->
+                <div id="ambassador-badge-card" class="hidden glass-card p-6 rounded-3xl border-2 border-amber-400/60 relative overflow-hidden space-y-4">
+                    <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="font-serif font-black text-amber-400">ANYI GA EMEYA 2027</span>
+                            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-bold">OFFICIAL CREDENTIAL</span>
                         </div>
-                        <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mx-auto">
-                            ✓
+                        <span class="font-mono text-xs text-gray-400" id="card-badge-id">ANYI27-0000</span>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-2xl bg-amber-400/20 border-2 border-amber-400/50 flex items-center justify-center text-2xl font-black text-amber-400">
+                            🎖️
                         </div>
-                        <h4 class="text-lg font-bold text-white">Official Campaign Receipt</h4>
-                        <div class="text-3xl font-black text-emerald-400" id="rec-amount">$50.00</div>
-                        <p class="text-xs text-gray-300 font-sans">
-                            Contributed by: <strong class="text-white" id="rec-donor">Donor Name</strong>
-                        </p>
-                        <p class="text-[11px] text-gray-500 font-sans leading-relaxed">
-                            Thank you for empowering the movement for the economic renaissance of Ebonyi State. Receipt logged securely for campaign compliance.
-                        </p>
-                        <button onclick="window.printReceipt()" class="px-5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-sans font-bold cursor-pointer transition-colors">
-                            🖨️ Print / Save Official Receipt
+                        <div>
+                            <h4 class="text-xl font-bold text-white" id="card-name">Ambassador Name</h4>
+                            <div class="text-xs text-amber-400 font-semibold" id="card-role">Grassroots Mobilizer</div>
+                            <div class="text-[11px] text-gray-400">Jurisdiction: <span class="text-white" id="card-lga">Abakaliki LGA</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Referral Link Area -->
+                    <div class="p-4 rounded-2xl bg-black/60 border border-white/10 space-y-2">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Your Unique Campaign Referral Link:</span>
+                        <div class="flex gap-2">
+                            <input type="text" id="amb-ref-link" readonly
+                                class="w-full px-3 py-2 bg-black/80 border border-white/10 rounded-lg text-xs font-mono text-amber-300 focus:outline-none">
+                            <button onclick="window.copyReferralLink()"
+                                class="px-4 py-2 bg-amber-400 hover:bg-amber-300 text-black text-xs font-bold rounded-lg cursor-pointer transition-colors">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button onclick="window.shareBadgeWhatsApp()"
+                            class="w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-colors">
+                            <span>Share on WhatsApp Status</span>
                         </button>
                     </div>
                 </div>
@@ -1442,83 +1342,7 @@
             window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
         };
 
-        // Donation & Receipt Generator
-        let currentCurrency = 'USD';
-        window.setCurrency = function(curr) {
-            currentCurrency = curr;
-            const usdBtn = document.getElementById('curr-usd');
-            const ngnBtn = document.getElementById('curr-ngn');
-            const presets = document.getElementById('preset-amounts');
 
-            if (curr === 'USD') {
-                usdBtn.className = "px-2.5 py-1 rounded bg-amber-400 text-black font-bold";
-                ngnBtn.className = "px-2.5 py-1 rounded bg-white/10 text-gray-300 hover:text-white font-bold";
-                presets.innerHTML = `
-                    <button type="button" onclick="window.setAmount(25)" class="p-3 rounded-xl bg-white/5 hover:bg-amber-400/20 border border-white/10 text-white font-mono font-bold text-sm">$25</button>
-                    <button type="button" onclick="window.setAmount(50)" class="p-3 rounded-xl bg-amber-400/20 border border-amber-400 text-amber-300 font-mono font-bold text-sm" id="amt-default">$50</button>
-                    <button type="button" onclick="window.setAmount(100)" class="p-3 rounded-xl bg-white/5 hover:bg-amber-400/20 border border-white/10 text-white font-mono font-bold text-sm">$100</button>
-                    <button type="button" onclick="window.setAmount(500)" class="p-3 rounded-xl bg-white/5 hover:bg-amber-400/20 border border-white/10 text-white font-mono font-bold text-sm">$500</button>
-                `;
-                document.getElementById('don-amount').value = 50;
-            } else {
-                ngnBtn.className = "px-2.5 py-1 rounded bg-amber-400 text-black font-bold";
-                usdBtn.className = "px-2.5 py-1 rounded bg-white/10 text-gray-300 hover:text-white font-bold";
-                presets.innerHTML = `
-                    <button type="button" onclick="window.setAmount(25000)" class="p-3 rounded-xl bg-white/5 hover:bg-amber-400/20 border border-white/10 text-white font-mono font-bold text-sm">₦25k</button>
-                    <button type="button" onclick="window.setAmount(50000)" class="p-3 rounded-xl bg-amber-400/20 border border-amber-400 text-amber-300 font-mono font-bold text-sm">₦50k</button>
-                    <button type="button" onclick="window.setAmount(100000)" class="p-3 rounded-xl bg-white/5 hover:bg-amber-400/20 border border-white/10 text-white font-mono font-bold text-sm">₦100k</button>
-                    <button type="button" onclick="window.setAmount(250000)" class="p-3 rounded-xl bg-white/5 hover:bg-amber-400/20 border border-white/10 text-white font-mono font-bold text-sm">₦250k</button>
-                `;
-                document.getElementById('don-amount').value = 50000;
-            }
-        };
-
-        window.setAmount = function(amt) {
-            document.getElementById('don-amount').value = amt;
-        };
-
-        window.submitCampaignDonation = async function(e) {
-            e.preventDefault();
-            const btn = document.getElementById('don-btn');
-            btn.disabled = true;
-            btn.innerHTML = '<span>Processing Receipt...</span>';
-
-            const payload = {
-                donor_name: document.getElementById('don-name').value.trim(),
-                donor_email: document.getElementById('don-email').value.trim(),
-                amount: document.getElementById('don-amount').value,
-                currency: currentCurrency,
-                payment_method: document.getElementById('don-method').value
-            };
-
-            try {
-                const res = await fetch('/api/campaign/contribute', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
-                    body: JSON.stringify(payload)
-                });
-                const data = await res.json();
-                const rec = data.receipt || payload;
-
-                document.getElementById('rec-id').textContent = data.receipt_id || 'ANYI27-REC-991244';
-                document.getElementById('rec-amount').textContent = (currentCurrency === 'USD' ? '$' : '₦') + Number(payload.amount).toLocaleString();
-                document.getElementById('rec-donor').textContent = payload.donor_name;
-
-                const view = document.getElementById('donation-receipt-view');
-                view.classList.remove('hidden');
-                view.scrollIntoView({ behavior: 'smooth' });
-
-                btn.disabled = false;
-                btn.innerHTML = '<span>Contribution Logged ✓</span>';
-            } catch(e) {
-                btn.disabled = false;
-                btn.innerHTML = '<span>Authenticate Contribution</span>';
-            }
-        };
-
-        window.printReceipt = function() {
-            window.print();
-        };
 
         // Mobile Campaign Navigation Drawer Controller
         window.toggleMobileCampaignNav = function() {
