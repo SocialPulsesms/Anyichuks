@@ -378,8 +378,9 @@
             <div class="flex items-center gap-2 sm:gap-3 lg:gap-5 shrink-0">
                 <!-- Join 2027 Movement Button (Always visible on mobile & desktop, elegantly fitted) -->
                 <button type="button" onclick="window.openVolunteerModal(event);"
-                    class="relative z-10 px-2.5 sm:px-5 py-1.5 sm:py-2 bg-gradient-to-r from-amber-400 to-amber-500 text-black font-extrabold rounded-full hover:from-amber-300 hover:to-amber-400 active:scale-95 transition-all text-[10px] sm:text-xs tracking-wider uppercase whitespace-nowrap shadow-md shadow-amber-400/20 flex items-center gap-1 sm:gap-1.5 cursor-pointer shrink-0">
-                    <span class="w-1.5 h-1.5 rounded-full bg-black animate-ping shrink-0"></span>
+                    style="background-color: #f59e0b !important; color: #000000 !important; font-weight: 800 !important; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important;"
+                    class="relative z-10 px-2.5 sm:px-5 py-1.5 sm:py-2 text-black font-extrabold rounded-full hover:brightness-110 active:scale-95 transition-all text-[11px] sm:text-xs tracking-wider uppercase whitespace-nowrap flex items-center gap-1.5 cursor-pointer shrink-0">
+                    <span class="w-1.5 h-1.5 rounded-full bg-black shrink-0"></span>
                     <span>Join <span class="hidden sm:inline">2027 Movement</span><span class="sm:hidden">2027</span></span>
                 </button>
 
@@ -543,6 +544,7 @@
                     <a href="https://www.tiktok.com/@ifeanyicodii" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white hover:border-amber-400 transition-colors">
                         <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-1.15 4.39-2.92 5.86-1.57 1.3-3.66 1.94-5.69 1.7-2.12-.23-4.06-1.3-5.32-2.93-1.39-1.78-1.92-4.14-1.42-6.32.48-2.17 1.87-4.07 3.8-5.11 2.01-1.07 4.43-1.22 6.6-.47v4.15c-1.16-.36-2.45-.41-3.63-.04-1.12.35-2.09 1.11-2.6 2.16-.54 1.12-.59 2.44-.15 3.59.45 1.2 1.48 2.15 2.72 2.49 1.28.36 2.69.19 3.84-.46 1.19-.69 1.99-1.91 2.18-3.26.23-1.48.16-2.98.17-4.47V.02z"></path></svg>
                         <span class="font-medium truncate">TikTok</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -2832,9 +2834,6 @@
                 imgEl.style.opacity = '1';
             }, 150);
         }
-    </script>
-
-
 
         // =========================================================================
         // MOBILE INTERACTIVE LANDSCAPE BOARDROOM CONTROLLER
